@@ -68,23 +68,23 @@ jobs:
 
             eval "$(ssh-agent -s)"
 
-            ssh-add ~/.ssh/<<NAMA_KEY_DARI_ASPRAK>>
+            ssh-add ~/.ssh/NAMA_KEY_DARI_ASPRAK ssh-praktikan29
 
             echo "Cek folder project";
 
-            [ ! -d "${HOME}/senpro/<<NIU>>/modul02/senpro-github-action/" ] &&
+            [ ! -d "${HOME}/senpro/516001/modul02/senpro-github-action/" ] &&
 
             {
 
               echo "Repository belum di-clone. Cloning...";
 
-              mkdir -p ~/senpro/<<NIU>>/modul02;
+              mkdir -p ~/senpro/516001/modul02;
 
-              cd ~/senpro/<<NIU>>/modul02;
+              cd ~/senpro/516001/modul02;
 
-              git clone <<LINK_REPOSITORY_FORK>>;
+              git clone https://github.com/anggitasalsabilla/senpro-github-action.git;
 
-              cd ~/senpro/<<NIU>>/modul02/senpro-github-action;
+              cd ~/senpro/516001/modul02/senpro-github-action;
 
               echo "Install Package dan Build Project";
 
@@ -98,7 +98,7 @@ jobs:
 
               echo "Repository sudah ada. Building...";
 
-              cd ~/senpro/<<NIU>>/modul02/senpro-github-action;
+              cd ~/senpro/516001/modul02/senpro-github-action;
 
               git restore .;
 
